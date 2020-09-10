@@ -46,7 +46,7 @@ export var urlparse={
             url=location.href
             var search=ex.parseSearch()
         }
-        ex.assign(search,obj)
+        Object.assign(search,obj)
         return url.replace(/(\?.*)|()$/,ex.searchfy(search,'?'))
     },
     parseURL: function(url) {

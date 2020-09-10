@@ -1,0 +1,36 @@
+
+.agent-regist-panel{
+  .field-input{
+    margin: 30px 20px;
+    padding: 0 10px;
+    border-bottom: 1px solid #d3d3d3;
+    padding-bottom: 10px;
+    font-size: 12px;
+    text-align: left;
+  }
+  input{
+    outline:none;
+    border: none;
+  }
+  .phone-code{
+      button{
+        background: #14B8AD;
+        color: white;
+        padding: 4px;
+        border: 1px solid grey;
+        border-radius: 5px;
+      }
+  }
+  ::-webkit-input-placeholder {
+    color: #c6c6c6;
+  }
+  :-moz-placeholder {/* Firefox 18- */
+    color: #c6c6c6;
+  }
+  ::-moz-placeholder{/* Firefox 19+ */
+    color: #c6c6c6;
+  }
+  :-ms-input-placeholder {
+    color: #c6c6c6;
+  }
+}
