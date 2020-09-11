@@ -1,3 +1,12 @@
+
+var count=0
+function show_block_load(target){
+    count += 1
+    ex.load_css('https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css')
+    $(target).append(`<div id="block_load_${count}" style="position: absolute;top:0;left:0;right:0;bottom: 0;background-color:rgba(255,255,255,0.6)"><i style="position: absolute;top:50%;left:50%;transform: translate(-50%,-50%)" class="fa-li fa fa-spinner fa-spin"></i></div>`)
+    return `#block_load_${count}`
+}
+
 export default {
     layer_index_stack:[],
     env:{
@@ -61,8 +70,10 @@ export default {
     hide_cloak:function(){
         layer.close(this._cloak_index)
     },
-    show_load:function(msg){
-        if(msg){
+    show_load:function({msg,target}={}){
+        if(target){
+            return show_block_load(target)
+        }else  if(msg){
             this._loader_index =layer.msg(msg, {
                 icon: 16
                 ,shade: 0.01,
@@ -72,12 +83,22 @@ export default {
             this._loader_index = layer.load(1)
         }
     },
-    hide_load:function(delay,msg){
-        if(! this._loader_index){
+    //close_load({delay,msg,selector}){
+    //    if(selector){
+    //        $(selector).remove()
+    //    }
+    //},
+    hide_load:function({delay,msg,target}={}){
+        if(target){
+            $(target).remove()
             return
+        }else{
+            if(! this._loader_index){
+                return
+            }
+            layer.close(this._loader_index)
+            this._loader_index =null
         }
-        layer.close(this._loader_index)
-        this._loader_index =null
         if(delay){
             var realMsg = msg || '操作成功'
             layer.msg(realMsg,{time:delay})

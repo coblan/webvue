@@ -4,13 +4,22 @@
     margin: 30px 20px;
     padding: 0 10px;
     border-bottom: 1px solid #d3d3d3;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
     font-size: 12px;
     text-align: left;
+    position: relative;
   }
   input{
     outline:none;
     border: none;
+  }
+  .n-icon{
+    display: none;
+  }
+  .n-right{
+    position: absolute;
+    left: 0;
+    top: 15px;
   }
   .phone-code{
       button{

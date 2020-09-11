@@ -1,6 +1,6 @@
 <template>
     <div class="password field-input">
-        <input type="password" v-model="row[head.name]" :placeholder="head.placeholder">
+        <input type="password" v-model="row[head.name]" :placeholder="head.placeholder" :name="head.name">
     </div>
 </template>
 <script>
