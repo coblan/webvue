@@ -1,6 +1,6 @@
 <template>
     <div class="image-code field-input"  style="text-align: left;position: relative;">
-        <input name="image_code"  class="image_code form-control input-sm"
+        <input name="image_code"  class="image_code form-control input-sm" :maxlength="head.maxlength"
                v-model="row[head.name]" type="text" placeholder="图片验证码">
         <img class="myimage" @click="getImageCode()" :src="'data:image/gif;base64,'+image_data" alt="">
         <!--<a href="#" @click="getImageCode()">换张图</a>-->
